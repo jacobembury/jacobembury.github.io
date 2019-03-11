@@ -1,0 +1,98 @@
+<html>
+<head>
+   <title>Parents Evening Timer</title> 
+    
+    
+    <link rel="icon" href="Beachborough-School-Logo-White-on-Blue%20copy.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <style>
+        body{
+            
+            background-image: url("beachborough123.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-size: 150pt;
+            color: white;
+            text-align: center;
+            padding-top: 270pt;
+            
+            
+        }
+        .button {
+          background-color: #4CAF50; /* Green */
+          border: none;
+          color: white;
+          padding: 20px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+          background-color: Green;
+          border: white;
+          
+        }
+        .button4 {border-radius: 7px;}
+        
+        
+    </style>
+    
+    
+    <script>
+  
+    function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i}; 
+  return i;
+}
+    
+    
+    </script>
+    
+</head>
+
+<body onload="startTime()">
+<div id="txt"></div>
+<button style="background-color: lightgreen; outline-color: lightgreen; font-size: 40px;"class="button4"type="button" onclick="myStartFunction()">Start</button>
+<button style="background-color: #ed4949; outline-color: #ed4949; font-size: 40px;"class="button4"type="button" onclick="myStopFunction()">Stop</button>
+
+<p id="demo"></p>
+
+<p id="demo2" style="color:red;"></p>
+
+<script>
+var myVar;
+
+function myStartFunction() {
+  myVar = setInterval(function(){ alertFunc("", ""); }, 300000);
+  alert("You have STARTED the timer");
+}
+
+function alertFunc(param1, param2) {
+var audio = new Audio('Soundtrackright.mp3');
+audio.play();
+}
+
+function myStopFunction() {
+  clearInterval(myVar);
+    alert("You have STOPPED the timer");
+}
+</script>
+
+    
+</body>
+    
+    
+</html>
